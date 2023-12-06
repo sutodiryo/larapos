@@ -33,7 +33,6 @@ class Login extends Component
             ]);
             return redirect()->route('dashboard');
         }
-
         $this->flash('warning', 'Login Gagal!', [
             'position' => 'top-end',
             'timer' => 3000,
