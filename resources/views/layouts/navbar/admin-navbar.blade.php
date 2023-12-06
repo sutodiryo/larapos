@@ -36,7 +36,7 @@
                             <i class="ni ni-zoom-split-in"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <i class="ni ni-bell-55"></i>
@@ -205,7 +205,7 @@
                                 </a>
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
                 <ul class="navbar-nav align-items-center ml-auto ml-md-0">
                     <li class="nav-item dropdown">
@@ -213,10 +213,11 @@
                             aria-haspopup="true" aria-expanded="false">
                             <div class="media align-items-center">
                                 <span class="avatar avatar-sm rounded-circle">
-                                    <img alt="Image placeholder" src="{{ asset('assets/img/theme/team-4.jpg') }}">
+                                    {{-- <img alt="Image placeholder" src="{{ asset('assets/img/theme/team-4.jpg') }}"> --}}
+                                    <span class="profile-text">AA</span>
                                 </span>
                                 <div class="media-body ml-2 d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                                    <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
                                 </div>
                             </div>
                         </a>
@@ -259,13 +260,13 @@
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
                         <h6 class="h2 d-inline-block mb-0">Alternative</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        {{-- <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Alternative</li>
                             </ol>
-                        </nav>
+                        </nav> --}}
                     </div>
                     <div class="col-lg-6 col-5 text-right">
                         <a href="#" class="btn btn-sm btn-neutral">New</a>

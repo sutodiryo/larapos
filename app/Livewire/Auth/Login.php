@@ -33,11 +33,19 @@ class Login extends Component
             ]);
             return redirect()->route('dashboard');
         }
+
         $this->flash('warning', 'Login Gagal!', [
             'position' => 'top-end',
             'timer' => 3000,
             'toast' => true,
         ]);
+
+        // $this->alert('question', 'How are you today?', [
+        //     'showConfirmButton' => true,
+        //     'confirmButtonText' => 'Good',
+        //     'onConfirmed' => 'confirmed'
+        // ]);
+
         // dd('aaa');
     }
 

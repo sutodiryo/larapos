@@ -1,5 +1,5 @@
 <div class="container-fluid mt--6">
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-gradient-primary border-0">
                 <!-- Card body -->
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="card-deck flex-column flex-xl-row">
         <div class="card">
             <div class="card-header bg-transparent">
@@ -156,7 +156,7 @@
             </div>
         </div>
         <!-- Progress track -->
-        <div class="card">
+        {{-- <div class="card">
             <!-- Card header -->
             <div class="card-header">
                 <div class="row align-items-center">
@@ -262,10 +262,10 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="row">
-        <div class="col-xl-8">
+        <div class="col-xl-12">
             <div class="card">
                 <div class="card-header border-0">
                     <div class="row align-items-center">
@@ -730,7 +730,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-4">
+        {{-- <div class="col-xl-4">
             <!-- Vector map -->
             <!--* Card header *-->
             <!--* Card body *-->
@@ -817,7 +817,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="card-deck flex-column flex-xl-row">
         <!-- Members list group card -->

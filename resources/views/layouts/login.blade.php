@@ -163,44 +163,12 @@
     <script src="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
     {{-- <script src="{{ asset('assets/vendor/bootstrap-notify/bootstrap-notify.min.js') }}"></script> --}}
 
-
-
-    <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
-    <x-livewire-alert::flash />
-
-    <script type="text/javascript">
-        window.addEventListener('swal', function(e) {
-            Swal.fire(e.detail);
-        });
-    </script>
-    <script type="text/javascript">
-        window.addEventListener('toast-loader', ({
-            detail: {
-                type,
-                message,
-                action
-            }
-        }) => {
-
-            Swal.fire({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timerProgressBar: true,
-                icon: 'success',
-                icon: type,
-                title: message,
-                timer: false,
-                didOpen: () => {
-                    Swal.showLoading()
-                }
-            });
-
-        });
-    </script>
-
     @livewireScripts
-    @stack('scripts')
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <x-livewire-alert::scripts />
+
     <!-- Argon JS -->
     <script src="{{ asset('assets/js/argon.js?v=1.1.0') }}"></script>
     <!-- Demo JS - remove this in your project -->

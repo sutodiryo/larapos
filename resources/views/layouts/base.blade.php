@@ -5,10 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    {{--
     <title>Lara POS @hasSection('title')
             - @yield('title')
         @endif
     </title>
+    --}}
+
     <title>Lara POS</title>
 
     <!-- Favicon -->
@@ -20,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
         type="text/css">
     <!-- Page plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.css') }}" type="text/css">
+
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/argon.css?v=1.1.0') }}" type="text/css">
 
@@ -47,6 +52,13 @@
     <script src="{{ asset('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
     <script src="{{ asset('assets/vendor/jvectormap-next/jquery-jvectormap.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
+
+    @livewireScripts
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <x-livewire-alert::scripts />
+
     <!-- Argon JS -->
     <script src="{{ asset('assets/js/argon.js?v=1.1.0') }}"></script>
     <!-- Demo JS - remove this in your project -->
