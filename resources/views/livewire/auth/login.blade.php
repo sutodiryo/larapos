@@ -57,7 +57,7 @@
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input  @error('remember') is-invalid @enderror" id=" customCheckLogin" type="checkbox" wire:model='remember'>
+                  <input class="custom-control-input @error('remember') is-invalid @enderror" id=" customCheckLogin" type="checkbox" wire:model='remember'>
                   <label class="custom-control-label" for=" customCheckLogin">
                     <span class="text-muted">Remember me</span>
                   </label>

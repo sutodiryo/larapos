@@ -4,6 +4,7 @@ namespace App\Livewire\Auth;
 
 use Livewire\Component;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -25,27 +26,30 @@ class Login extends Component
     public function store()
     {
         $this->validate();
+
         if (Auth::guard('web')->attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
+
             $this->flash('success', 'Berhasil Login!', [
                 'position' => 'top-end',
                 'timer' => 3000,
                 'toast' => true,
             ]);
+
             return redirect()->route('dashboard');
         }
+
         $this->flash('warning', 'Login Gagal!', [
             'position' => 'top-end',
             'timer' => 3000,
             'toast' => true,
         ]);
+    }
 
-        // $this->alert('question', 'How are you today?', [
-        //     'showConfirmButton' => true,
-        //     'confirmButtonText' => 'Good',
-        //     'onConfirmed' => 'confirmed'
-        // ]);
+    public function logout()
+    {
+        Session::flush();
 
-        // dd('aaa');
+        return redirect(route('login'));
     }
 
     public function render()
