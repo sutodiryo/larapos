@@ -81,7 +81,7 @@
         <script src="{{ asset('assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }} "></script>
         <script src="{{ asset('assets/vendor/nouislider/distribute/nouislider.min.js') }} "></script>
         <script src="{{ asset('assets/vendor/quill/dist/quill.min.js') }} "></script>
-        <script src="{{ asset('assets/vendor/dropzone/dist/min/dropzone.min.js') }} "></script>
+        {{-- <script src="{{ asset('assets/vendor/dropzone/dist/min/dropzone.min.js') }} "></script> --}}
         <script src="{{ asset('assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }} "></script>
     @endif
 
