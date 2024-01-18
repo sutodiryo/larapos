@@ -21,7 +21,7 @@
     <!-- Page content -->
     <div class="container-fluid mt--6">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="card-wrapper">
                     <!-- Input groups -->
                     <div class="card">
@@ -31,15 +31,14 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-control-label" for="name">Nama Produk</label>
-                                            <input type="text" wire:model.live="name" id="name"
+                                            <input type="text" wire:model="name" id="name"
                                                 :error="'name'" placeholder=""
                                                 class="form-control @error('name') is-invalid @enderror" />
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" wire:ignore.self>
                                             <label class="form-control-label" for="category_id">Kategori</label>
 
-                                            <select wire:model.live="category_id" id="category_id"
-                                                :error="'category_id'"
+                                            <select wire:model="category_id" id="category_id" :error="'category_id'"
                                                 class="form-control @error('category_id') is-invalid @enderror"
                                                 data-toggle="select">
                                                 @foreach ($this->product_categories as $pc)
@@ -54,26 +53,70 @@
                                                 <input type="file" type="file" wire:model.live="images"
                                                     id="images" :error="'images'" multiple
                                                     class="custom-file-input @error('images') is-invalid @enderror"
-                                                    id="customFileLang" lang="en">
-                                                <label class="custom-file-label" for="customFileLang">Pilih Foto</label>
+                                                    id="images" lang="en"
+                                                    accept="image/png, image/gif, image/jpeg">
+                                                <label class="custom-file-label">Pilih Foto</label>
                                             </div>
                                             <ul>
                                                 @foreach ($images as $i)
-                                                    <li>{{ $i }}</li>
+                                                    <li>
+                                                        {{ $i->getClientOriginalName() }}
+                                                    </li>
                                                 @endforeach
                                             </ul>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="description">Deskripsi/Keterangan</label>
-                                            <form>
-                                                <div data-toggle="quill" wire:model.live="name" id="description" data-quill-placeholder="Quill WYSIWYG"></div>
-
-                                            </form>
-                                        </div>
-
 
                                     </div>
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card-wrapper">
+                    <!-- Input groups -->
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-control-label"
+                                                for="description">Deskripsi/Keterangan</label>
+
+                                            <textarea wire:model="description" class="form-control" id="description" rows="5"></textarea>
+                                            {{-- <form>
+                                                <div data-toggle="quill" wire:model.live="name" id="description" data-quill-placeholder="Quill WYSIWYG"></div>
+                                            </form> --}}
+                                        </div>
+                                        <div class="form-group" wire:ignore.self>
+                                            <label class="form-control-label" for="product_code">Kode Produk</label>
+                                            <input type="text" wire:model="product_code" id="product_code"
+                                                :error="'product_code'" placeholder=""
+                                                class="form-control @error('product_code') is-invalid @enderror" />
+                                        </div>
+
+                                        <div class="form-group" wire:ignore.self>
+                                            <label class="form-control-label" for="purchase_price">Harga Beli</label>
+                                            <input type="number" wire:model="purchase_price" id="purchase_price"
+                                                :error="'purchase_price'" placeholder=""
+                                                class="form-control @error('purchase_price') is-invalid @enderror"
+                                                min="100" step="100" />
+                                        </div>
+
+                                        <div class="form-group" wire:ignore.self>
+                                            <label class="form-control-label" for="selling_price">Harga Jual</label>
+                                            <input type="number" wire:model="selling_price" id="selling_price"
+                                                :error="'selling_price'" placeholder=""
+                                                class="form-control @error('selling_price') is-invalid @enderror"
+                                                min="100" step="100" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Simpan</button>
+
                             </form>
                         </div>
                     </div>
@@ -95,14 +138,16 @@
                             <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About
+                            <a href="https://www.creative-tim.com/presentation" class="nav-link"
+                                target="_blank">About
                                 Us</a>
                         </li>
                         <li class="nav-item">
                             <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
+                            <a href="https://www.creative-tim.com/license" class="nav-link"
+                                target="_blank">License</a>
                         </li>
                     </ul>
                 </div>

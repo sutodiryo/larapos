@@ -16,6 +16,7 @@ class Add extends Component
     public $name, $category_id, $images = [], $description, $product_code, $bar_code, $purchase_price, $selling_price;
 
     protected $listeners = [
+        'images',
         'refreshComponent' => '$refresh',
         'searchUpdated' => 'searchUpdated',
     ];
@@ -32,6 +33,18 @@ class Add extends Component
     public function updatedProductName()
     {
         // $this->product_nss = $this->product_name;
+    }
+
+
+    // public function getImageseForInput($value)
+    // {
+    //     if (!is_null($value))
+    //         $this->images = $value;
+    // }
+
+    public function hydrate()
+    {
+        $this->dispatch('select');
     }
 
     public function render()

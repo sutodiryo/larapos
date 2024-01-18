@@ -17,7 +17,7 @@
 
     <!-- Page plugins -->
     @if (Request::routeIs('product.add'))
-        <link rel="stylesheet" href="{{ asset('assets/vendor/select2/dist/css/select2.min.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/select2/dist/css/select2.min.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('assets/vendor/quill/dist/quill.core.css') }}">
     @endif
 
@@ -50,7 +50,6 @@
             padding: 10px 20px 10px 50px;
         }
     </style>
-    @stack('styles')
 
 </head>
 
@@ -77,7 +76,7 @@
     @endif
 
     @if (Request::routeIs('product.add'))
-        <script src="{{ asset('assets/vendor/select2/dist/js/select2.min.js') }} "></script>
+        {{-- <script src="{{ asset('assets/vendor/select2/dist/js/select2.min.js') }} "></script> --}}
         <script src="{{ asset('assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }} "></script>
         <script src="{{ asset('assets/vendor/nouislider/distribute/nouislider.min.js') }} "></script>
         <script src="{{ asset('assets/vendor/quill/dist/quill.min.js') }} "></script>
@@ -95,7 +94,6 @@
     <script src="{{ asset('assets/js/argon.js?v=1.1.0') }}"></script>
     <!-- Demo JS - remove this in your project -->
     {{-- <script src="{{ asset('assets/js/demo.min.js') }}"></script> --}}
-    @stack('scripts')
 
 </body>
 
